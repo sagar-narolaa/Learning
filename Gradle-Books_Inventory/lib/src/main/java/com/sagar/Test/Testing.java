@@ -21,26 +21,7 @@ public class Testing {
 		return a+b;
 	}
 	
-	public static void main(String[] args) throws IOException {
-		String path="../Excel Files/books.xls";	
-		File file=new File("../Excel Files");
 		
-		 boolean x= file.mkdir();
-		
-		 if(x==true) {
-			 System.out.println("creting directory succesfull");
-		 }else {
-			 System.out.println("creating directory failed");
-		 }
-		 
-		 file=new File(path);
-		System.out.println(file.getAbsolutePath());
-		OutputStream os=new FileOutputStream(file);
-		os.close();
-		
-	   
-	}
-	
 	
 	
 	

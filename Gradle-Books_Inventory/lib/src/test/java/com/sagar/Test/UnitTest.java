@@ -1,12 +1,35 @@
 package com.sagar.Test;
 
-import org.junit.jupiter.api.DisplayName;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.*;
+import java.util.Properties;
+
 import org.junit.jupiter.api.Test;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UnitTest {
 	Testing ts=new Testing();
+	
+	@Test
+	void testConnection() {
+		try {
+			
+			InputStream is= UnitTest.class.getResourceAsStream("/database.properties");
+			Properties pr=new Properties();
+			pr.load(is);
+			Class.forName(pr.getProperty("db_driver"));
+			Connection con=DriverManager.getConnection(pr.getProperty("db_url"),pr.getProperty("db_username"), pr.getProperty("db_pwd"));
+			System.out.println("Connection Established");			
+			
+		} catch (ClassNotFoundException | IOException | SQLException e) {
+			System.out.println("Exception while getting a connection");
+			e.printStackTrace();
+		}
+	}
+	
 
     @Test
     void testGet() {
@@ -17,7 +40,7 @@ public class UnitTest {
     @Test
     void testAdd() {
     	System.out.println("=============Calling from testAdd()===========");
-    	assertEquals(11,ts.addTwo(5,5));
+    	assertEquals(10,ts.addTwo(5,5));
     }  
     
 }

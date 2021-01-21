@@ -32,7 +32,7 @@ public class ExportToExcel {
 		  
 	  }
 	
-	public void generateExcel() throws FileNotFoundException, SQLException {
+	public int generateExcel() throws FileNotFoundException, SQLException {
 		
 		@SuppressWarnings("resource")
 		Workbook wb=new HSSFWorkbook() ;
@@ -112,15 +112,14 @@ public class ExportToExcel {
             wb.write(out); 
             out.close(); 
             System.out.println("books.xlsx written successfully on disk."); 
+            return 1;
         } 
         catch (Exception e) { 
             e.printStackTrace(); 
+            return -1;
         } 
-		
-	
-		
-		
-		
+        
+            
 	}
 	
 	

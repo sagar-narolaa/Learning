@@ -1,19 +1,15 @@
 package com.sagar.Test;
 
-import org.junit.*;
+import org.junit.jupiter.api.Test;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
-import org.junit.Test;
-//import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class UnitTest {
-	Testing ts=new Testing();
-	static Connection con=null;
-	static Properties pr=new Properties();
+public class TestConnection {
+	 Connection con=null;
+	 Properties pr=new Properties();
 	
 	@Test
 	void testConnection() {
@@ -29,18 +25,5 @@ public class UnitTest {
 			e.printStackTrace();
 		}
 	}   
-
-    @Test
-    void testGet() {
-    	assertEquals("jdbc:mysql://localhost:3306/books_inventory", pr.getProperty("db_url"));
-    	System.out.println("=============Calling from testGet()==============");
-        assertEquals("Hello Testing", ts.get());
-    }
-    
-    @Test
-    void testAdd() {    	
-    	System.out.println("=============Calling from testAdd()===========");
-    	assertEquals(10,ts.addTwo(5,5));
-    }   
-    
+	
 }

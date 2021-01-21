@@ -1,5 +1,6 @@
 package com.sagar.controller;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -18,6 +19,7 @@ import com.sagar.model.Book;
 public class BookServlet extends HttpServlet {
     private static final long serialVersionUID = 1;
     private BookDAO bookDAO;
+    private int excelGenerated=0;
 
     public void init() {
     	bookDAO = new BookDAO();
@@ -49,6 +51,9 @@ public class BookServlet extends HttpServlet {
                 case "/update":
                     updateBook(request, response);
                     break;
+                case "/generateExcel":  
+                	generateExcel(request,response);
+                	break;
                 default:
                     listBook(request, response);
                     break;
@@ -57,16 +62,25 @@ public class BookServlet extends HttpServlet {
             throw new ServletException(ex);
         }
     }
+    
+    
 
-    private void listBook(HttpServletRequest request, HttpServletResponse response)
+    private void generateExcel(HttpServletRequest request,HttpServletResponse response) throws SQLException, IOException, ServletException {
+			excelGenerated= BookDAO.convertToExcel();
+			listBook(request,response);
+			
+	}
+
+	private void listBook(HttpServletRequest request, HttpServletResponse response)
     throws SQLException, IOException, ServletException {
         List < Book > listBooks = BookDAO.selectAllBooks();
         listBooks.forEach((it)-> System.out.println(it.getAuthor()));/////////////////////////////printing list here
         request.setAttribute("listBooks", listBooks);
+        request.setAttribute("excelGenerated", excelGenerated);
         RequestDispatcher dispatcher = request.getRequestDispatcher("book-list.jsp");
         dispatcher.forward(request, response);
-        BookDAO.convertToExcel();
-        
+        excelGenerated=0;
+       // BookDAO.convertToExcel();        
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)

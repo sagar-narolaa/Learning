@@ -9,22 +9,74 @@
 
         <body>
 
-
             <br>
 
             <div class="row">
                 <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
                 <div class="container">
-                    <h2 style="text-align: center" class="text-center">List of Books</h2>
+                    <h2 style="text-align: center;background-color: bisque" class="text-center">List of Books &#x1F4DA &#x1F4D9</h2>
                     <hr>
-                    <div class="container text-left">
+                    <div style="display:flex" class="container text-left">
 
-                        <a style=" margin-left:auto;margin-right:auto ;text-decoration:none; ;display: block;width: 115px;height: 25px;background: #4E9CAF;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;" href="<%=request.getContextPath()%>/new" class="btn btn-success">Add
+             <a style=" margin-left:auto;margin-right:auto;text-decoration:none; ;display: block;width: 115px;height: 25px;background: #4E9CAF;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;" href="<%=request.getContextPath()%>/new" class="btn btn-success">Add
      New Book</a>
+     
+             <a style=" margin-left:auto;displat:inline;margin-right:auto ;text-decoration:none; ;display: block;height: 25px;background: brown;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;" href="<%=request.getContextPath()%>/generateExcel" class="btn btn-success">Generate Excel Sheet &#x1F4CA</a>
                     </div>
+                    
+
+                    <% int x=(int) request.getAttribute("excelGenerated"); %>
+                    
+                    <% if(x==1){ %>
+ 							<h3 style=" display:block;text-align:center;background-color: green;color:white;text-align:center">
+ 							Excel Sheet Generated &#128523 &#128523
+                    		</h3>
+ 					 <% } %>
+ 					 
+ 					   
+<%--                     <% if(x==false){ %>
+ 							<h3 style=" display:block;text-align:center;background-color: red;text-align:center">
+ 							Please Close The Excel Sheet
+                    		</h3>
+ 					 <% } %> --%>
+ 						
+						 
+			  <% if(x==-1){ %>
+ 							<h3 style=" display:block;text-align:center;background-color: black;color:white;text-align:center">
+ 							Please Close The Excel Sheet And Try Again! &#x1F60F
+                    		</h3>
+ 			  <% } %>
+               
+<%--                     <%!
+                    public boolean printt(){    	
+	
+     						if(x){
+     							return true;
+     						}else{
+     							return false;
+     						}
+                    }		 --%>
+                    <!-- %> -->
+                    
+<%--                     <h3 style=" display:<%= printt((boolean)request.getAttribute("excelGenerated")) %>;text-align:center;background-color: lightgreen;text-align:center" > Excel File Generated </h3>
+ --%>                    
+                   			
+                   			
+<%--                    			<h3 style=" display:block;text-align:center;background-color: red;text-align:center">
+                    		<c:if test= "${printt()}">
+                    			 Excel Generated 
+                    		</c:if>
+                    		</h3> --%>
+                    		
+                    		
+                    		
+                    		
+                 			
+					
+                    
                     <br>
-                    <table style="margin-left: auto;margin-right: auto" class="table table-bordered" border=1>
+                    <table style="width:70%;background: papayawhip;text-decoration: ;margin-left: auto;margin-right: auto" class="table table-bordered" border=1>
                         <thead>
                             <tr>
                                 <!-- <th>ID</th> -->
@@ -61,4 +113,4 @@
             </div>
         </body>
 
-        </html>
+        </html> 

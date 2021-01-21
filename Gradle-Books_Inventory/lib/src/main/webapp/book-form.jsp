@@ -21,7 +21,7 @@
                 </nav>
             </header> -->
             <br>
-            <div class="container col-md-5">
+            <div style="margin-left: 20%; margin-right: 20%;max-width: 50%" class="container col-md-5">
                 <div class="card">
                     <div class="card-body">
                         <c:if test="${book != null}">
@@ -32,7 +32,7 @@
                         </c:if>
 
                         <caption>
-                            <h2>
+                            <h2 style=" margin-top:40px;text-decoration:none;display: block;height: 25px;background: crimson;padding: 10px;text-align: center;color: white;font-weight: bold;line-height: 25px;">
                                 <c:if test="${book != null}">
                                     Edit Book
                                 </c:if>
@@ -58,7 +58,9 @@
                            <label>Author</label> <input type="text" value="<c:out value='${book.author}' />" class="form-control" name="Author"><br><br>
                         <!-- </fieldset> -->
 
-                        <button type="submit" class="btn btn-success">Save</button>
+                        <button style=" display: block;width: 40%;background: green;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px " type="submit" class="btn btn-success">Save</button>
+                        
+                        <a style=" margin-top:40px;text-decoration:none; ;display: block;width: 115px;height: 25px;background: chocolate;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;" href="<%=request.getContextPath()%>" class="btn btn-success">List Of Books</a>
                         
                     </div>
                 </div>

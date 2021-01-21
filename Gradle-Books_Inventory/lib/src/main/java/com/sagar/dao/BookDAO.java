@@ -27,7 +27,7 @@ public class BookDAO {
     
     public static void call() {
     	Properties pr = new Properties();
-    	try {   		
+    	try {   	
     	
     		
 			  InputStream iss = BookDAO.class.getResourceAsStream("/database_queries.properties");
@@ -183,16 +183,18 @@ public class BookDAO {
         return rowUpdated;
     }
     
-    public static void convertToExcel() throws FileNotFoundException {
+    public static int convertToExcel() throws FileNotFoundException {
     	Connection connection= BookDAO.getConnection();
     	try {
 			PreparedStatement pr=connection.prepareStatement(convert_to_excel);
 			ResultSet rsResultSet=pr.executeQuery();
 			ResultSetMetaData rsMetaDeta= rsResultSet.getMetaData();
 			ExportToExcel ex=new ExportToExcel(rsResultSet,"books",rsMetaDeta);
-			ex.generateExcel();
-		} catch (SQLException e) {			
+			 int status= ex.generateExcel();
+			 return status;
+		} catch (SQLException e) {				
 			e.printStackTrace();
+			return -1;
 		}
     	
     }

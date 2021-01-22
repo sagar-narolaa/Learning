@@ -33,7 +33,7 @@ public class BookServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         String action = request.getServletPath();
-
+        System.out.println(action.toString());
         try {
             switch (action) {
                 case "/new":
@@ -54,8 +54,23 @@ public class BookServlet extends HttpServlet {
                 case "/generateExcel":  
                 	generateExcel(request,response);
                 	break;
+                case "/list":
+                	listBook(request, response);
+                    break;
+                case "/login":
+                	login(request,response);
+                	break;
+                case "/signup":
+                	signup(request,response);
+                	break;	
+                case "/logout":
+                	logout(request,response);
+                	break;
+                case "/signupPage":
+                	signupPage(request,response);
+                	break;                	
                 default:
-                    listBook(request, response);
+                    userLoginPage(request,response);
                     break;
             }
         } catch (SQLException ex) {
@@ -63,7 +78,52 @@ public class BookServlet extends HttpServlet {
         }
     }
     
+    private void signupPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	RequestDispatcher rd=req.getRequestDispatcher("userSignUp.jsp");
+    	rd.forward(req, resp);		
+	}
+
+	private void logout(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
+    	RequestDispatcher rd=req.getRequestDispatcher("userLogin.jsp");
+    	rd.forward(req, resp);
+    }
     
+    private void signup(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
+    	String Fname=req.getParameter("fname");
+    	String Lname=req.getParameter("lname");
+    	String Email=req.getParameter("email");
+    	String pwd=req.getParameter("pwd");   	
+    	
+    	boolean status=bookDAO.signUp(Fname,Lname,Email,pwd);
+    	if(status==false) {
+	    	RequestDispatcher rd=req.getRequestDispatcher("userLogin.jsp");
+	    	rd.forward(req, resp);
+    	}else {
+    		RequestDispatcher rd=req.getRequestDispatcher("SignUpError.jsp");
+	    	rd.forward(req, resp);
+    	}
+    	
+    	
+    }
+    
+    private void login(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException, SQLException {
+    	String email=req.getParameter("email");
+    	String pwd=req.getParameter("pwd");
+    	
+    	boolean status=bookDAO.signIn(email,pwd);
+    	RequestDispatcher rd=req.getRequestDispatcher("book-list.jsp");
+    	if(status) {    		
+			listBook(req, resp);
+		}else {
+			rd=req.getRequestDispatcher("SignInError.jsp");
+			rd.forward(req, resp);
+		}
+    }
+    
+    private void userLoginPage(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
+    	RequestDispatcher rd=req.getRequestDispatcher("userLogin.jsp");
+    	rd.forward(req, resp);
+    }
 
     private void generateExcel(HttpServletRequest request,HttpServletResponse response) throws SQLException, IOException, ServletException {
 			excelGenerated= BookDAO.convertToExcel();

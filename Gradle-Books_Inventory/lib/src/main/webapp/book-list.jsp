@@ -22,14 +22,14 @@
              <a style=" margin-left:auto;margin-right:auto;text-decoration:none; ;display: block;width: 115px;height: 25px;background: #4E9CAF;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;" href="<%=request.getContextPath()%>/new" class="btn btn-success">Add
      New Book</a>
      
-             <a style=" margin-left:auto;displat:inline;margin-right:auto ;text-decoration:none; ;display: block;height: 25px;background: brown;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;" href="<%=request.getContextPath()%>/generateExcel" class="btn btn-success">Generate Excel Sheet &#x1F4CA</a>
+             <a style=" margin-left:auto;margin-right:auto ;text-decoration:none; ;display: block;height: 25px;background: brown;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;" href="<%=request.getContextPath()%>/generateExcel" class="btn btn-success">Generate Excel Sheet &#x1F4CA</a>
                     </div>
-                    
-
+                     <a style=" margin-left:auto;margin-right:auto;text-decoration:none; ;display: block;width: 115px;height: 25px;background: red;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;" href="<%=request.getContextPath()%>/logout" class="btn btn-success">Log Out</a>
+	
                     <% int x=(int) request.getAttribute("excelGenerated"); %>
                     
                     <% if(x==1){ %>
- 							<h3 style=" display:block;text-align:center;background-color: green;color:white;text-align:center">
+ 							<h3 style=" displ=ay:block;text-align:center;background-color: green;color:white;text-align:center">
  							Excel Sheet Generated &#128523 &#128523
                     		</h3>
  					 <% } %>
@@ -111,6 +111,7 @@
                     </table>
                 </div>
             </div>
+
         </body>
 
         </html> 

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>cant sign in</h3>
+<h3> Cannot Find Entry in database . Please Register First!</h3>
 </body>
 </html>

@@ -110,12 +110,12 @@ public class BookServlet extends HttpServlet {
     	String email=req.getParameter("email");
     	String pwd=req.getParameter("pwd");
     	
-    	boolean status=bookDAO.signIn(email,pwd);
-    	RequestDispatcher rd=req.getRequestDispatcher("book-list.jsp");
+    	boolean status=bookDAO.signIn(email,pwd);    	 
+    	req.setAttribute("status",status);
     	if(status) {    		
 			listBook(req, resp);
 		}else {
-			rd=req.getRequestDispatcher("SignInError.jsp");
+			RequestDispatcher rd=req.getRequestDispatcher("userLogin.jsp");
 			rd.forward(req, resp);
 		}
     }

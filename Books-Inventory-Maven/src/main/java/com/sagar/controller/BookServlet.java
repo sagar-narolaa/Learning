@@ -13,10 +13,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
 //import com.mysql.cj.Session;
 import com.sagar.dao.BookDAO;
 import com.sagar.model.Book;
 
+
+@Controller
 public class BookServlet extends HttpServlet {
     private static final long serialVersionUID = 1;
     private BookDAO bookDAO;
@@ -25,11 +31,13 @@ public class BookServlet extends HttpServlet {
     public void init() {
     	bookDAO = new BookDAO();
     }
-
+    
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         doGet(request, response);
     }
+    
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
@@ -121,9 +129,10 @@ public class BookServlet extends HttpServlet {
 }
     	 return false;  	 
     	    
-    }
-    
-    private void login(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException, SQLException {
+    }   
+  
+    @PostMapping("/login")
+    public void login(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException, SQLException {
     	String email=req.getParameter("email");
     	String pwd=req.getParameter("pwd");
     	

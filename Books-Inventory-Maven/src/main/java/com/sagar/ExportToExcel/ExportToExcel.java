@@ -28,8 +28,7 @@ public class ExportToExcel {
 	  public ExportToExcel(ResultSet rs,String name,ResultSetMetaData rsMetadata) {
 		  this.resultSet=rs;
 		  this.sheet_name=name;
-		  this.resultSetMetaDeta=rsMetadata;
-		  
+		  this.resultSetMetaDeta=rsMetadata;		  
 	  }
 	
 	public int generateExcel() throws FileNotFoundException, SQLException {
@@ -111,7 +110,7 @@ public class ExportToExcel {
        //     OutputStream out = new FileOutputStream(new File("C:\\Users\\sosagar\\eclipse-workspace\\Gradle-Books_Inventory\\Excel Files\\"+sheet_name+".xls")); 
             wb.write(out); 
             out.close(); 
-            System.out.println("books.xlsx written successfully on disk."); 
+            System.out.println("books.xls written successfully on disk."); 
             return 1;
         } 
         catch (Exception e) { 

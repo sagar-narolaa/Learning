@@ -10,4 +10,6 @@ see_by_id=select ID,Book_Name, ISBN, Author from books where ID =?
 
 convert_to_excel=select ID,Book_Name,ISBN,Author from books;
 
+insert_user= INSERT INTO users (FNAME,LNAME,EMAIL,PASSWORD) VALUES (?, ?, ?, ?);
 
+verify_user=select EMAIL,PASSWORD from users where EMAIL=? AND PASSWORD=?;

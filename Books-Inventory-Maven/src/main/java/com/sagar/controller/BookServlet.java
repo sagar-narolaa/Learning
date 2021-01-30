@@ -13,23 +13,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 //import com.mysql.cj.Session;
-import com.sagar.dao.BookDAO;
+import com.sagar.dao.Book_DAO;
 import com.sagar.model.Book;
 
 
-@Controller
+
 public class BookServlet extends HttpServlet {
     private static final long serialVersionUID = 1;
-    private BookDAO bookDAO;
-    private int excelGenerated=0;
+   
 
+    private Book_DAO bookDAO;
+    private int excelGenerated=0;
+    
+    
     public void init() {
-    	bookDAO = new BookDAO();
+    	
     }
     
     
@@ -112,8 +115,7 @@ public class BookServlet extends HttpServlet {
     	}else {
     		RequestDispatcher rd=req.getRequestDispatcher("SignUpError.jsp");
 	    	rd.forward(req, resp);
-    	}    	
-    	
+    	}    	    	
     }
     
     public boolean loginValidator(HttpServletRequest req,HttpServletResponse resp) {
@@ -125,13 +127,13 @@ public class BookServlet extends HttpServlet {
     		 System.out.println("================"+arr[0].getName()+"========="+arr[0].getValue());	 
     	 }
 } catch (Exception e) {
-	// TODO: handle exception
+	
 }
     	 return false;  	 
     	    
     }   
   
-    @PostMapping("/login")
+
     public void login(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException, SQLException {
     	String email=req.getParameter("email");
     	String pwd=req.getParameter("pwd");
@@ -156,20 +158,20 @@ public class BookServlet extends HttpServlet {
     }
 
     private void generateExcel(HttpServletRequest request,HttpServletResponse response) throws SQLException, IOException, ServletException {
-			excelGenerated= BookDAO.convertToExcel();
+			excelGenerated= bookDAO.convertToExcel();
 			listBook(request,response);			
 	}
 
 	private void listBook(HttpServletRequest request, HttpServletResponse response)
     throws SQLException, IOException, ServletException {
-        List < Book > listBooks = BookDAO.selectAllBooks();
+        List < Book > listBooks = bookDAO.selectAllBooks();
         listBooks.forEach((it)-> System.out.println(it.getAuthor()));/////////////////////////////printing list here
         request.setAttribute("listBooks", listBooks);
         request.setAttribute("excelGenerated", excelGenerated);
         RequestDispatcher dispatcher = request.getRequestDispatcher("book-list.jsp");
         dispatcher.forward(request, response);
         excelGenerated=0;
-       // BookDAO.convertToExcel();        
+       // Book_DAO.convertToExcel();        
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)

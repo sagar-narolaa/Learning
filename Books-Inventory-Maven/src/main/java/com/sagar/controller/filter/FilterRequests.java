@@ -18,7 +18,7 @@ import com.sagar.controller.BookServlet;
 /**
  * Servlet Filter implementation class FilterRequests
  */
-@WebFilter("/list")
+
 public class FilterRequests implements Filter {
 
     /**

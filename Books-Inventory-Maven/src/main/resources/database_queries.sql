@@ -13,3 +13,5 @@ convert_to_excel=select ID,Book_Name,ISBN,Author from books;
 insert_user= INSERT INTO users (FNAME,LNAME,EMAIL,PASSWORD) VALUES (?, ?, ?, ?);
 
 verify_user=select EMAIL,PASSWORD from users where EMAIL=? AND PASSWORD=?;
+
+user_exist=select EMAIL from users where FNAME=? AND LNAME=?;

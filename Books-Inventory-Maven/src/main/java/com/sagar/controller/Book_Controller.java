@@ -53,19 +53,23 @@ public class Book_Controller {
     
     @PostMapping("/signup")
     private void signup(HttpServletRequest req,HttpServletResponse resp) throws IOException, ServletException {
+    	    	
     	String Fname=req.getParameter("fname");
     	String Lname=req.getParameter("lname");
     	String Email=req.getParameter("email");
     	String pwd=req.getParameter("pwd");   	
     	System.out.println(Fname+Lname);
+    	
     	boolean status=bookDAO.signUp(Fname,Lname,Email,pwd);
-    	if(status==false) {
+    	req.setAttribute("signup_status",status);
+    	
+		/* if(status) { */ 		
 	    	RequestDispatcher rd=req.getRequestDispatcher("userLogin.jsp");
 	    	rd.forward(req, resp);
-    	}else {
+/*    	}else {    		
     		RequestDispatcher rd=req.getRequestDispatcher("SignUpError.jsp");
 	    	rd.forward(req, resp);
-    	}    	
+    	} */   	
     	
     }
     
@@ -114,8 +118,9 @@ public class Book_Controller {
     }
     
     @GetMapping("/generateExcel")
-    private void generateExcel(HttpServletRequest request,HttpServletResponse response) throws SQLException, IOException, ServletException {
-			excelGenerated= bookDAO.convertToExcel();
+    private String generateExcel(HttpServletRequest request,HttpServletResponse response,Model model) throws SQLException, IOException, ServletException {
+			excelGenerated= bookDAO.convertToExcel();			 	 
+			 return "redirect:/list";
 			//listBook(request,response);			
 	}
     

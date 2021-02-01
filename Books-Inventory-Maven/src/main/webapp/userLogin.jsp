@@ -31,6 +31,16 @@
 			<h2>Wrong Email or Password</h2>
 	</c:if>
 	
+	
+	<c:set var="status" value="${signup_status}"></c:set>
+
+	<c:if test="${status==true}">
+			<h2>SignUp Successful</h2>
+	</c:if>
+	<c:if test="${status==false}">
+			<h2>User Exist Please Login!</h2>
+	</c:if>
+	
 		<a style=" margin-top:40px;text-decoration:none; ;display: block;width: 115px;height: 25px;background: chocolate;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;" href="<%=request.getContextPath()%>/signupPage" class="btn btn-success">Register</a>
 		
 		

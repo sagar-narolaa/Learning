@@ -28,6 +28,7 @@ public class Book_DAO {
 	private static String convert_to_excel = null;
 	private static String insert_user = null;
 	private static String verify_user=null;
+	private static String user_exist=null;
 	
 	public static void call() {
 		Properties pr = new Properties();
@@ -36,9 +37,13 @@ public class Book_DAO {
 			InputStream iss = BookDAO.class.getResourceAsStream("/database_queries.sql");
 			pr.load(iss);
 			
-			System.out.println("=========================================================" + pr.getProperty("insert"));
-			System.out.println(
-					"=========================================================" + pr.getProperty("convert_to_excel"));
+			/*
+			 * System.out.println(
+			 * "=========================================================" +
+			 * pr.getProperty("insert")); System.out.println(
+			 * "=========================================================" +
+			 * pr.getProperty("convert_to_excel"));
+			 */
 
 			insert_book = pr.getProperty("insert");
 			select_book_by_id = pr.getProperty("see_by_id");
@@ -47,9 +52,10 @@ public class Book_DAO {
 			update_book = pr.getProperty("update_by_id");
 			convert_to_excel = pr.getProperty("convert_to_excel");
 			
+			
 			insert_user=pr.getProperty("insert_user");
 			verify_user=pr.getProperty("verify_user");
-			
+			user_exist=pr.getProperty("user_exist");
 			System.out.println(verify_user);
 
 		} catch (Exception e) {
@@ -77,8 +83,7 @@ public class Book_DAO {
 				return ps.execute();						
 			}			
 			
-		 });	
-			
+		 });				
 	}
 
 	public Book selectBook(int id) {
@@ -193,21 +198,43 @@ public class Book_DAO {
 	}
 
 	public boolean signUp(String fname, String lname, String email, String pwd) {
-		return template.execute(insert_user,new PreparedStatementCallback<Boolean>() {
-
+			
+		boolean exist= template.execute(user_exist,new PreparedStatementCallback<Boolean>() {
+			
 			@Override
 			public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {				
 				
 				ps.setString(1, fname);
 				ps.setString(2, lname);
-				ps.setString(3, email);
-				ps.setString(4, pwd);
+
 				System.out.println( ps.toString() );
 				boolean status = ps.execute();
-				System.out.println("Signup Sucessfull");
+				//System.out.println("Signup Sucessfull");
 				return status;				
 			}			
 		 });
+		
+		if(exist) {
+			return !exist;
+		}else {
+			
+			return template.execute(insert_user,new PreparedStatementCallback<Boolean>() {
+				
+				@Override
+				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {				
+					
+					ps.setString(1, fname);
+					ps.setString(2, lname);
+					ps.setString(3, email);
+					ps.setString(4, pwd);
+					System.out.println( ps.toString() );
+					boolean status = !ps.execute();
+					//System.out.println("Signup Sucessfull");
+					return status;				
+				}			
+			 });
+			
+		}
 
 	}
 
@@ -234,9 +261,6 @@ public class Book_DAO {
 			}			
 		 });
 		
-		return Status;
-		
-
-		
+		return Status;		
 }
 }

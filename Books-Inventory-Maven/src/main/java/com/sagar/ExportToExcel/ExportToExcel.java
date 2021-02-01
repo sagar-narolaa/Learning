@@ -3,15 +3,19 @@ package com.sagar.ExportToExcel;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 import java.util.TreeMap;
 import org.apache.poi.ss.usermodel.Workbook;
+
+import com.sagar.dao.BookDAO;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -96,14 +100,17 @@ public class ExportToExcel {
         } 
         try { 
         	
-    		File file=new File("./"+sheet_name+".xls");
+    		
     		
     		// boolean x= file.mkdir();    		 
     		//System.out.println((x==true)?"Creating directory Succesfull":"Failed Creating Directory");
-    		
-    		String path="./"+sheet_name+".xls";	 
-    		file=new File(path);
-    		System.out.println(file.getAbsolutePath());
+        	InputStream iss = BookDAO.class.getResourceAsStream("/file_paths.properties");
+        	Properties pr=new Properties();
+			pr.load(iss);
+    		//String path=pr.getProperty("excel_path")+sheet_name+".xls";	
+			
+    		File file=new File("C:\\Users\\sosagar\\eclipse-workspace\\Books-Inventory-Maven\\"+sheet_name+".xls");
+    	//	System.out.println(file.getAbsolutePath());
     		OutputStream out=new FileOutputStream(file);
         	
         	

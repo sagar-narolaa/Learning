@@ -4,6 +4,12 @@
         <html>
 
         <head>
+        <c:if test="${book != null}">
+                           <title>Edit Book</title>
+                        </c:if>
+                        <c:if test="${book == null}">
+                          <title>Add Book</title>
+                        </c:if>
             <title>Book Inventory</title>
         </head>
 
@@ -28,7 +34,7 @@
                             <form action="update" method="post">
                         </c:if>
                         <c:if test="${book == null}">
-                            <form action="insert" method="post">
+                            <form action="add" method="post">
                         </c:if>
 
                         <caption>

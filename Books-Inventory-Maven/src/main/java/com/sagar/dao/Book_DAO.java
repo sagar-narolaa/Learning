@@ -12,11 +12,13 @@ import java.util.Properties;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
-import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.stereotype.Service;
 
-import com.sagar.ExportToExcel.ExportToExcel;
+import com.sagar.Service.ExportToExcel;
 import com.sagar.model.Book;
 
+
+@Service
 public class Book_DAO {
 	public JdbcTemplate template;
 	
@@ -34,17 +36,9 @@ public class Book_DAO {
 		Properties pr = new Properties();
 		try {
 
-			InputStream iss = BookDAO.class.getResourceAsStream("/database_queries.sql");
+			InputStream iss = Book_DAO.class.getResourceAsStream("/database_queries.sql");
 			pr.load(iss);
 			
-			/*
-			 * System.out.println(
-			 * "=========================================================" +
-			 * pr.getProperty("insert")); System.out.println(
-			 * "=========================================================" +
-			 * pr.getProperty("convert_to_excel"));
-			 */
-
 			insert_book = pr.getProperty("insert");
 			select_book_by_id = pr.getProperty("see_by_id");
 			get_all_books = pr.getProperty("see_all_records");

@@ -50,7 +50,7 @@
  		<url-pattern>/Books</url-pattern>
     </servlet-mapping>
   
- <filter>
+<!--  <filter>
    <filter-name>FilterRequests</filter-name>
    <filter-class>com.sagar.controller.filter.FilterRequests</filter-class>
 </filter>
@@ -65,6 +65,6 @@
         <url-pattern>/generateExcel</url-pattern>
         <url-pattern>/list</url-pattern>
         <url-pattern>/signUp</url-pattern>
-</filter-mapping>
+</filter-mapping> -->
   
 </web-app>

@@ -4,112 +4,86 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.server.PathParam;
+import javax.xml.crypto.Data;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sagar.Service.Authentication_Service;
+import com.sagar.Service.CRUD_Service;
+import com.sagar.Service.DatabaseService;
+import com.sagar.Service.Excel_Service;
 //import com.mysql.cj.Session;
 import com.sagar.dao.Book_DAO;
 import com.sagar.model.Book;
+import com.sagar.model.User;
 
 
 @Controller
 public class Book_Controller {
+	
+	@Autowired
+	private CRUD_Service crud_Service;
+	@Autowired
+	private Excel_Service excel_Service;
+	@Autowired
+	private DatabaseService database_Service;
+	@Autowired
+	private Authentication_Service authentication_Service;
     
     @Autowired
     private Book_DAO bookDAO;
+    
     private int excelGenerated=0;
    
     
     @GetMapping("/signupPage")
     private String signupPage() throws  IOException {
     	return "userSignUp";
-		/*
-		 * RequestDispatcher rd=req.getRequestDispatcher("userSignUp.jsp");
-		 * rd.forward(req, resp);
-		 */	
 	}
     
     @GetMapping("/logout")
 	private String logout(HttpSession session) throws IOException {		
 		session.invalidate();		
-		return "redirect:userLogin.jsp"; 
-		/*
-		 * RequestDispatcher rd=req.getRequestDispatcher("userLogin.jsp");
-		 * rd.forward(req, resp);
-		 */
+		return "userLogin"; 
     }
     
     @PostMapping("/signup")
-    private void signup(HttpServletRequest req,HttpServletResponse resp) throws IOException, ServletException {
-    	    	
-    	String Fname=req.getParameter("fname");
-    	String Lname=req.getParameter("lname");
-    	String Email=req.getParameter("email");
-    	String pwd=req.getParameter("pwd");   	
-    	System.out.println(Fname+Lname);
+    private String signup(@ModelAttribute User user,Model model) throws IOException, ServletException {
     	
-    	boolean status=bookDAO.signUp(Fname,Lname,Email,pwd);
-    	req.setAttribute("signup_status",status);
-    	
-		/* if(status) { */ 		
-	    	RequestDispatcher rd=req.getRequestDispatcher("userLogin.jsp");
-	    	rd.forward(req, resp);
-/*    	}else {    		
-    		RequestDispatcher rd=req.getRequestDispatcher("SignUpError.jsp");
-	    	rd.forward(req, resp);
-    	} */   	
-    	
+    	boolean signup_status=authentication_Service.signUp(user,model);    	
+    	model.addAttribute("signup_status",signup_status);
+    	return "userLogin"; 		
+   	
     }
     
-	/*
-	 * public boolean loginValidator(HttpServletRequest req,HttpServletResponse
-	 * resp) { try { Cookie[] arr= req.getCookies(); System.out.
-	 * println("====================Length of the cookie is ============="+arr.
-	 * length);
-	 * 
-	 * for(int i=0;i<arr.length;i++) {
-	 * System.out.println("================"+arr[0].getName()+"========="+arr[0].
-	 * getValue()); } } catch (Exception e) { // TODO: handle exception } return
-	 * false;
-	 * 
-	 * }
-	 */  
   
     @PostMapping("/login")
-    public String login( HttpServletRequest req,HttpServletResponse resp,Model model) throws IOException, SQLException, ServletException {
-    	String email=req.getParameter("email");
-    	String pwd=req.getParameter("pwd");
+    public String login(@RequestParam("email") String Email,@RequestParam("pwd") String Pwd,Model model) throws IOException, SQLException, ServletException {
     	
-    	int status=bookDAO.signIn(email,pwd); 
+    	int status=authentication_Service.login(Email,Pwd,model);
     	
-    	HttpSession session=req.getSession();
-    	session.setAttribute("email", email);
-    	    
-		
-		  if(status==1) {
-			  
+    	if(status==1) {			  
 			  return "redirect:/list";
-			 // listBook(req, resp);
 		  }else { 
 			  model.addAttribute("status",status);
 			  return "userLogin";
-				/*
-				 * RequestDispatcher rd=req.getRequestDispatcher("userLogin.jsp");
-				 * rd.forward(req, resp);
-				 */ 
-			  }		 		
+			  }	
     }
     
     @GetMapping("/")
@@ -118,82 +92,54 @@ public class Book_Controller {
     }
     
     @GetMapping("/generateExcel")
-    private String generateExcel(HttpServletRequest request,HttpServletResponse response,Model model) throws SQLException, IOException, ServletException {
-			excelGenerated= bookDAO.convertToExcel();			 	 
-			 return "redirect:/list";
-			//listBook(request,response);			
+    private String generateExcel(Model model) throws SQLException, IOException, ServletException {
+    		excelGenerated=excel_Service.generateExcel();
+			 return "redirect:/list";		
 	}
-    
-    @RequestMapping("/list-book")
-    public String listnbook() {
-    	return "book-list";
-    }
     
     
     @RequestMapping("/list")
-	private String listBook(HttpServletRequest req,HttpServletResponse resp,Model model)
-    throws SQLException, IOException, ServletException {
-        List < Book > listBooks = bookDAO.selectAllBooks();
-        listBooks.forEach((it)-> System.out.println(it.getAuthor()));/////////////////////////////printing list here
-       
-        
+	private String listBook(Model model) throws SQLException, IOException, ServletException {
+        List < Book > listBooks =  database_Service.getBooks();       
         model.addAttribute("listBooks", listBooks);
-        model.addAttribute("excelGenerated", excelGenerated);
-       
-        return "book-list";
-        
-		/*
-		 * RequestDispatcher rd=req.getRequestDispatcher("books-list.jsp");
-		 * rd.forward(req, resp); //return "redirect:book-list.jsp"; excelGenerated=0;
-		 */        
+        int excel_status=excelGenerated;
+        model.addAttribute("excelGenerated",excel_status);       
+        excelGenerated=0;
+        return "book-list";             
     }
     
-    @GetMapping("/new")
-    private void showNewForm(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("book-form.jsp");
-        dispatcher.forward(request, response);
+    @GetMapping("/add")
+    private String showNewForm() throws ServletException, IOException {
+    	return "book-form";
     }
     
-    @GetMapping("/edit")
-    private void showEditForm(HttpServletRequest request, HttpServletResponse response)
-    throws SQLException, ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Book existingBook = bookDAO.selectBook(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("book-form.jsp");
-        request.setAttribute("book", existingBook);
-        dispatcher.forward(request, response);
+  
+    
+    @GetMapping("/edit/{id}")
+    private String showEditForm(@PathVariable("id") int idd,Model model) throws SQLException, ServletException, IOException {    	
+        Book existingBook =crud_Service.getExistingBook(idd); 
+        System.out.println(existingBook.toString());//////////////////////////////
+        model.addAttribute("book", existingBook);
+        return "book-form";
     }
     
-    @PostMapping("/insert")
-    private void insertBook(HttpServletRequest request, HttpServletResponse response)
-    throws SQLException, IOException {
-        String name = request.getParameter("name");
-        String ISBN = request.getParameter("ISBN");
-        String Author = request.getParameter("Author");
-        Book newBook = new Book(name, ISBN, Author);
+   
+    @PostMapping("/add")    
+    private String insertBook(@RequestParam("name") String namee, @RequestParam("ISBN") String isbn,@RequestParam("Author") String author) throws SQLException, IOException {
+       Book newBook=crud_Service.addNewBook(namee,isbn,author);    	
         bookDAO.insertBook(newBook);
-        response.sendRedirect("list");
+        return "redirect:/list";        
     }
     
-    @PostMapping("/update")
-    private void updateBook(HttpServletRequest request, HttpServletResponse response)
-    throws SQLException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        String name = request.getParameter("name");
-        String ISBN = request.getParameter("ISBN");
-        String Author = request.getParameter("Author");
-
-        Book book = new Book(id, name, ISBN, Author);
-        bookDAO.updateBook(book);
-        response.sendRedirect("list");
+    @PostMapping("/edit/update")
+    private String updateBook(@ModelAttribute Book book) throws SQLException, IOException {
+    	crud_Service.updateBook(book);       
+        return "redirect:/list";    
     }
     
-    @GetMapping("/delete")
-    private void deleteBook(HttpServletRequest request, HttpServletResponse response)
-    throws SQLException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        bookDAO.deleteBook(id);
-        response.sendRedirect("list");
+    @GetMapping("/delete/{id}")
+    private String deleteBook(@PathVariable("id") int id)  throws SQLException, IOException {
+    	crud_Service.deleteBook(id);        
+        return "redirect:/list";
     }
 }

@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.sagar.dao.Book_DAO;
+import com.sagar.dao.BookDao;
 import com.sagar.model.User;
 
 public class Authentication_Service {
 	@Autowired
-	private Book_DAO bookDAO;
+	private BookDao bookDAO;
 
 	public boolean signUp(@ModelAttribute User user,Model model) {
 

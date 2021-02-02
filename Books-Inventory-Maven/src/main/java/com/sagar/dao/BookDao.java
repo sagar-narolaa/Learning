@@ -15,28 +15,29 @@ import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.stereotype.Service;
 
 import com.sagar.Service.ExportToExcel;
+import com.sagar.Service.TobeAutoWired;
 import com.sagar.model.Book;
 
 
 @Service
-public class Book_DAO {
+public class BookDao{
 	public JdbcTemplate template;
 	
-	private static String insert_book = null;
-	private static String select_book_by_id = null;
-	private static String get_all_books = null;
-	private static String delete_book_by_id = null;
-	private static String update_book = null;
-	private static String convert_to_excel = null;
-	private static String insert_user = null;
-	private static String verify_user=null;
-	private static String user_exist=null;
+	private  String insert_book;
+	private  String select_book_by_id;
+	private  String get_all_books ;
+	private  String delete_book_by_id;
+	private  String update_book ;
+	private  String convert_to_excel ;
+	private  String insert_user ;
+	private  String verify_user;
+	private  String user_exist;
 	
-	public static void call() {
+	public void call() {
 		Properties pr = new Properties();
 		try {
 
-			InputStream iss = Book_DAO.class.getResourceAsStream("/database_queries.sql");
+			InputStream iss = BookDao.class.getResourceAsStream("/database_queries.sql");
 			pr.load(iss);
 			
 			insert_book = pr.getProperty("insert");
@@ -58,8 +59,8 @@ public class Book_DAO {
 
 	}
 	
-	public Book_DAO() {
-		System.out.println("Book_DAO Constructor called");
+	public BookDao() {
+		System.out.println("BookDao Constructor called");
 		call();		
 	}
 	

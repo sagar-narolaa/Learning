@@ -4,13 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.sagar.dao.Book_DAO;
+import com.sagar.dao.BookDao;
 import com.sagar.model.Book;
 
-public class DatabaseService {
+public class DatabaseService{
 	
 	@Autowired
-	  private Book_DAO bookDAO;
+	  private BookDao bookDAO;
 
 	public List<Book> getBooks() {
 		return bookDAO.selectAllBooks();		

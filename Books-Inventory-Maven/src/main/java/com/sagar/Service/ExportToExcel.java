@@ -15,7 +15,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import org.apache.poi.ss.usermodel.Workbook;
 
-import com.sagar.dao.Book_DAO;
+import com.sagar.dao.BookDao;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -104,7 +104,7 @@ public class ExportToExcel {
     		
     		// boolean x= file.mkdir();    		 
     		//System.out.println((x==true)?"Creating directory Succesfull":"Failed Creating Directory");
-        	InputStream iss = Book_DAO.class.getResourceAsStream("/file_paths.properties");
+        	InputStream iss = BookDao.class.getResourceAsStream("/file_paths.properties");
         	Properties pr=new Properties();
 			pr.load(iss);
     		//String path=pr.getProperty("excel_path")+sheet_name+".xls";	

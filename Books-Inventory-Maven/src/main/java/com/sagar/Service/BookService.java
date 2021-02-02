@@ -7,17 +7,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.sagar.dao.Book_DAO;
+import com.sagar.dao.BookDao;
 import com.sagar.model.Book;
 import com.sagar.model.User;
 
 @Service
-public class CRUD_Service {
+public class BookService{
 	@Autowired
-	private Book_DAO bookDAO;
+	private BookDao bookDao;
 
 	public Book getExistingBook(int id) {
-		return bookDAO.selectBook(id);
+		return bookDao.selectBook(id);
 	}
 
 	public Book addNewBook(String name, String isbn, String author) {		
@@ -34,13 +34,13 @@ public class CRUD_Service {
         String ISBN = book.getISBN();
         String Author = book.getAuthor();
         Book updatedBook = new Book(id,name, ISBN, Author);
-        bookDAO.updateBook(updatedBook);
+        bookDao.updateBook(updatedBook);
         
 	}
 
 	public void deleteBook(int idd) throws SQLException {
 		int id = idd;
-        bookDAO.deleteBook(id);		
+        bookDao.deleteBook(id);		
 	}
 
 

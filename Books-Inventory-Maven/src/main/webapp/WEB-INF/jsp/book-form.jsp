@@ -53,15 +53,15 @@
                         </c:if>
 
                         <!-- <fieldset class="form-group"> -->
-                            <label>Book Name</label> <input type="text" value="<c:out value='${book.name}' />" class="form-control" name="name" required="required"><br><br>
+                            <label>Book Name  :</label> <input type="text" value="<c:out value='${book.name}' />" class="form-control" name="name" required="required"><br><br>
                         <!-- </fieldset> -->
 
                         <!--  <fieldset class="form-group">-->
-                            <label>ISBN</label> <input type="text" value="<c:out value='${book.ISBN}' />" class="form-control" name="ISBN"><br><br>
+                            <label>ISBN    :</label> <input type="text" value="<c:out value='${book.ISBN}' />" class="form-control" name="ISBN"><br><br>
                         <!-- </fieldset> -->
 
                         <!--  <fieldset class="form-group">-->
-                           <label>Author</label> <input type="text" value="<c:out value='${book.author}' />" class="form-control" name="Author"><br><br>
+                           <label>Author                           :</label> <input type="text" value="<c:out value='${book.author}' />" class="form-control" name="Author"><br><br>
                         <!-- </fieldset> -->
 
                         <button style=" display: block;width: 40%;background: green;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px " type="submit" class="btn btn-success">Save</button>

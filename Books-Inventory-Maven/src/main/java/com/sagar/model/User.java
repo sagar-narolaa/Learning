@@ -1,10 +1,26 @@
 package com.sagar.model;
 
-public class User {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+/*@Entity*/
+/*
+ * @Table(name = "users")
+ */public class User {
+	
+	@Column(name = "FNAME")
 	private String fname;
+	@Column(name = "LNAME")
 	private String lname;
+	
+	@Id
+	@Column(name = "EMAIL")
 	private String email;
+	@Column(name = "PASSWORD")
 	private String pwd;
+	
 	public String getFname() {
 		return fname;
 	}
@@ -28,7 +44,21 @@ public class User {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
+	}
+	
+	public User() {
+		
+	}
+	
+	public User(String fname, String lname, String email, String pwd) {
+		super();
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
+		this.pwd = pwd;
 	}	
+	
+	
 	
 
 }

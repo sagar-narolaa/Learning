@@ -1,22 +1,41 @@
 package com.sagar.model;
 
+import java.util.Arrays;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="books")
 public class Book {
+	@Id
+	//@GeneratedValue(strategy = GenerationType.AUTO)	
     protected int id;
+	@Column(name="Book_Name")
     protected String name;
+	@Column(name="ISBN")
     protected String ISBN;
+	@Column(name="Author")
     protected String author;
 
-    public Book() {}
+    public Book() {System.out.println("default constructor");}
 
     public Book(String name,String ISBN,String Author) {
         super();
+        System.out.println("3 args constructor");
      this.name=name;
      this.ISBN=ISBN;
      this.author=Author;
     }
 
-    public Book(int id,String name,String ISBN,String Author) {
+    public Book(int id,String name,String ISBN,String Author) {    	
         super();
+        System.out.println("4 args constructor");
         this.id = id;
         this.name=name;
         this.ISBN=ISBN;
@@ -53,6 +72,10 @@ public class Book {
 
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+	
+	public static List<String> getColumnNames(){
+		return Arrays.asList("ID","NAME","ISBN","AUTHOR");
 	}
 
 	@Override

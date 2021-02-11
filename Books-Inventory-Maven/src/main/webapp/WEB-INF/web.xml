@@ -1,70 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
 
-  <display-name>Books-Inventory-Maven</display-name>
-  <welcome-file-list>
-  <welcome-file>userLogin.jsp</welcome-file>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>  
-  
-  
-  <servlet>
+	<display-name>Books-Inventory-Maven</display-name>
+	<welcome-file-list>
+		<welcome-file>userLogin.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+
+	<servlet>
 		<servlet-name>dispatcher</servlet-name>
-		<servlet-class>
-			org.springframework.web.servlet.DispatcherServlet
-		</servlet-class>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring-dispatcher.xml</param-value>
+		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
- 
+
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
- 
+<!-- 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
-	</context-param>
- 
-	<listener>
-		<listener-class>
-			org.springframework.web.context.ContextLoaderListener
-		</listener-class>
-	</listener>
-	
-  
-  
-  <servlet>
-        <servlet-name>BookServlet</servlet-name>
-        <servlet-class>com.sagar.controller.BookServlet</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>BookServlet</servlet-name>
- 		<url-pattern>/Books</url-pattern>
-    </servlet-mapping>
-  
-<!--  <filter>
-   <filter-name>FilterRequests</filter-name>
-   <filter-class>com.sagar.controller.filter.FilterRequests</filter-class>
-</filter>
+		<param-value>/WEB-INF/abc.xml</param-value>
+	</context-param> -->
 
-<filter-mapping>
-   <filter-name>FilterRequests</filter-name>   
-        <url-pattern>/new</url-pattern>
-        <url-pattern>/insert</url-pattern>
-        <url-pattern>/delete</url-pattern>
-        <url-pattern>/edit</url-pattern>
-        <url-pattern>/update</url-pattern>
-        <url-pattern>/generateExcel</url-pattern>
-        <url-pattern>/list</url-pattern>
-        <url-pattern>/signUp</url-pattern>
-</filter-mapping> -->
-  
+<!-- 	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+ -->
+
 </web-app>

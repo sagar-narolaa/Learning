@@ -14,15 +14,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.sagar.Service.Authentication_Service;
+import com.sagar.entity.UserEntity;
 import com.sagar.model.User;
+import com.sagar.propertiesLoader.PropertiesLoader;
+import com.sagar.service.AuthenticationService;
 
 
 @Controller
 public class UserController {	
 	@Autowired
-	Authentication_Service authentication_Service;
+	AuthenticationService authenticationService;
 
+	
     @GetMapping("/")
     private String userLoginPage() throws IOException {
     	return "userLogin";
@@ -34,15 +37,14 @@ public class UserController {
 	}
     
     @GetMapping("/logout")
-	private String logout(HttpSession session) throws IOException {		
-		session.invalidate();		
+	private String logout() throws IOException {		
 		return "userLogin"; 
     }
     
     @PostMapping("/signup")
-    private String signup(@ModelAttribute User user,Model model) throws IOException, ServletException {
+    private String signup(@ModelAttribute UserEntity user,Model model) throws IOException, ServletException {
     	
-    	boolean signup_status=authentication_Service.signUp(user,model);    	
+    	boolean signup_status=authenticationService.signUp(user,model);    	
     	model.addAttribute("signup_status",signup_status);
     	return "userLogin"; 		
    	
@@ -50,9 +52,9 @@ public class UserController {
     
   
     @PostMapping("/login")
-    public String login(@RequestParam("email") String Email,@RequestParam("pwd") String Pwd,Model model) throws IOException, SQLException, ServletException {
+    public String login(@RequestParam("email") String email,@RequestParam("pwd") String pwd,Model model) throws IOException, SQLException, ServletException {
     	
-    	int status=authentication_Service.login(Email,Pwd,model);
+    	int status=authenticationService.login(email,pwd);
     	
     	if(status==1) {			  
 			  return "redirect:/list";

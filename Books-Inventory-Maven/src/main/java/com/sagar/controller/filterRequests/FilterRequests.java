@@ -1,4 +1,4 @@
-package com.sagar.controller.FilterRequests;
+package com.sagar.controller.filterRequests;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -12,12 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 /**
  * Servlet Filter implementation class FilterRequests
  */
 
 @WebFilter("/")
 public class FilterRequests implements Filter {
+	
+	
 
     /**
      * Default constructor. 
@@ -37,20 +41,8 @@ public class FilterRequests implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		/*
-		 * System.err.
-		 * println("==========================Filter Method Invoked============================"
-		 * ); HttpServletRequest req=(HttpServletRequest)request; HttpServletResponse
-		 * resp=(HttpServletResponse)response; BookServlet obj=new BookServlet();
-		 * boolean status=obj.loginValidator(req,resp);
-		 * 
-		 * if(status) { // pass the request along the filter chain
-		 * System.out.println("Servlet Path in Filter is================"+req.
-		 * getContextPath()); RequestDispatcher
-		 * rd=req.getRequestDispatcher(req.getContextPath()+"/list"); rd.forward(req,
-		 * resp); }else { RequestDispatcher
-		 * rd=request.getRequestDispatcher("userLogin.jsp"); rd.forward(req, resp); }
-		 */
+		
+		Logger logger = Logger.getLogger(FilterRequests.class);
 		
 		HttpServletRequest req=(HttpServletRequest)request;
 		HttpServletResponse resp=(HttpServletResponse)response;
@@ -58,13 +50,13 @@ public class FilterRequests implements Filter {
 		RequestDispatcher rd=null;
 		
 		if (session.getAttribute("email") == null) {
-			System.out.println("=================not logged in ======================");
+			logger.info("=================not logged in ======================");
 			rd=req.getRequestDispatcher("/WEB-INF/jsp/userLogin.jsp");
 			rd.forward(req, resp);
 		   // resp.sendRedirect(req.getContextPath() + "/login"); // Not logged in, redirect to login page.
 		} else {
 			
-			System.out.println("================= logged in ======================");
+			logger.info("================= logged in ======================");
 			
 		    chain.doFilter(request, response); // Logged in, just continue chain.
 		}			

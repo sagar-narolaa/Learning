@@ -1,17 +1,20 @@
 
   package com.sagar.entity;
   
-  import javax.persistence.Column;
+  import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id; import
   javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
   
   @Entity
-  @Table(name="countryy")
+  @Table(name="countries")
   public class Country {
   
   @Id
@@ -22,14 +25,17 @@ import javax.persistence.Table;
   @Column(name="name")
   private String name;
   
-  
-	/*
-	 * @OneToOne(mappedBy = "country") private Address address;
-	 */
-  
-	/*
-	 * @ManyToOne private State state;
-	 */
+	@OneToMany(mappedBy = "country")
+	private List<State> state;
+
+	public List<State> getState() {
+		return state;
+	}
+
+	public void setState(List<State> state) {
+		this.state = state;
+	}
+	 
 
 public int getCountryId() {
 	return countryId;

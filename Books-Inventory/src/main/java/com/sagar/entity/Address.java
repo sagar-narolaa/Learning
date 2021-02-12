@@ -4,7 +4,6 @@ package com.sagar.entity;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -44,14 +43,14 @@ public class Address {
 	@JoinColumn(name = "userId", nullable = false)
 	private UserEntity user;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne /* (cascade = CascadeType.ALL) */
 	@JoinColumn(name = "cityId", nullable = false)
 	private City city;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne /* (cascade = CascadeType.ALL) */
 	private State state;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne /* (cascade = CascadeType.ALL) */
 	private Country country;
 
 	public State getState() {
@@ -126,12 +125,6 @@ public class Address {
 		}
 		 
 	}
-
-	/*
-	 * public String getCity() { return city; }
-	 * 
-	 * public void setCity(String city) { this.city = city; }
-	 */
 
 	public String getAddrType() {
 		return addrType;

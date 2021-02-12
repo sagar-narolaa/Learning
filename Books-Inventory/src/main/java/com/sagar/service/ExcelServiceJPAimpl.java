@@ -57,43 +57,6 @@ public class ExcelServiceJPAimpl implements ExcelService{
 		
 		Map<Integer,ArrayList<Object>> data=new TreeMap<>();		
 		
-		//ArrayList<Object> obj=new ArrayList<Object>();
-		
-		//tableColoumnNames=new String[resultSetMetaDeta.getColumnCount()];	
-	
-		//tableColoumnNames=new String[list.size()];
-		//ArrayList<ArrayList<Object>> temp=new ArrayList<ArrayList<Object>>();
-		
-		/*
-		 * for (int i = 1; i <=resultSetMetaDeta.getColumnCount(); i++) {
-		 * 
-		 * System.out.print(
-		 * resultSetMetaDeta.getColumnName(i)+" ");//////////////////////////////
-		 * obj.add(resultSetMetaDeta.getColumnName(i)) ;
-		 * tableColoumnNames[i-1]=resultSetMetaDeta.getColumnName(i); }
-		 */
-		//System.out.println();
-		
-		//data.put(1,obj);		
-		//temp.add((ArrayList<Object>) columnNames);
-		//System.out.println(temp);
-		
-//		System.out.println("starting =================================");
-//		for (String x : tableColoumnNames) {			
-//			System.out.println(x);
-//		}
-//		System.out.println("ending =================================");
-		
-		/*
-		 * while(resultSet.next()) { ArrayList<Object> tempp=new ArrayList<>(); for(int
-		 * i=0;i<tableColoumnNames.length;i++) {
-		 * tempp.add(resultSet.getString(tableColoumnNames[i]));//////////////we can
-		 * addindex here also } temp.add(tempp); }
-		 */
-		 
-		
-		//System.out.println(temp);//////////////////Printing Entries
-		
 		data.put(0,(ArrayList<Object>) columnNames );		
 
 		for (int i = 0; i <columnData.size(); i++) {

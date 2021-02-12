@@ -8,13 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "cityy")
-public class City {
+import com.sagar.main.EntityDAO;
 
+@Entity
+@Table(name = "cities")
+public class City {
 	@Id
 	@Column(name = "cityId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,23 +23,28 @@ public class City {
 
 	@Column(name = "name")
 	private String cityName;	
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "state_id")
+	private State state;
 	 
-	public State getState() {
-		return state;
-	}
 
-	public void setState(State state) {
+
+	public void setState(State state) {		
 		this.state = state;
 	}
-
-	@OneToOne (cascade = CascadeType.ALL)
-	private State state;
+	
+	public State getState() {		
+		return state;
+	}
 	
 	public int getCityId() {
+		
 		return cityId;
 	}
 
 	public void setCityId(int cityId) {
+		
 		this.cityId = cityId;
 	}
 
@@ -49,8 +55,4 @@ public class City {
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
-
-	
-
-
 }

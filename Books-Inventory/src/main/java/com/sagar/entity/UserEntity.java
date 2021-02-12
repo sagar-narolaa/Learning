@@ -35,7 +35,7 @@ public class UserEntity {
 	@Column(name = "PASSWORD")
 	private String pwd;
 
-	@OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Address> addrList = new ArrayList<Address>();
 
 	public int getId() {

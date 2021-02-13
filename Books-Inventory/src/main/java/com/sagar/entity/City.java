@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.sagar.main.EntityDAO;
+import com.sagar.EntityDaoDemo.EntityDAO;
 
 @Entity
 @Table(name = "cities")

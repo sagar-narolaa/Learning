@@ -4,12 +4,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import com.sagar.EntityDaoDemo.EntityDAO;
 import com.sagar.entity.Address;
 import com.sagar.entity.City;
 import com.sagar.entity.Country;
 import com.sagar.entity.State;
 import com.sagar.entity.UserEntity;
-import com.sagar.main.EntityDAO;
 
 class Test {
 
@@ -28,12 +28,12 @@ class Test {
 		user.setPwd("admin@1234"); 
 		
 
-		City city=EntityDAO.fetchCity("Navsari");
+		City city=EntityDAO.fetchCity("Adalaj");
 		State state= city.getState();
 		Country country=state.getCountry();
 		
 		
-		assertEquals(new String("Navsari") ,city.getCityName());
+		//assertEquals(new String("Navsari") ,city.getCityName());
 		
 		System.out.println(city.getCityName());
 		System.out.println(state.getstateName());
@@ -46,14 +46,18 @@ class Test {
 		addr1.setAddrLine3("Jalalpore");
 		addr1.setAddrType("home");
 		addr1.setPincode("396421");
-		addr1.setUser(user);
+		//addr1.setUser(user);
 		addr1.setCity(city);
 		addr1.setCountry(country);
 		addr1.setState(state);
-
+		
 		user.getAddrList().add(addr1);
 
 		em.persist(user);
+		//em.detach(user);
+		addr1.setAddrLine1("South Africa Zoo");
+		user.setLname("BhakhriWala");
+		//addr1.setCity(EntityDAO.fetchCity("Navsari"));
 		//em.merge(user);
 		em.getTransaction().commit();
 		em.close();

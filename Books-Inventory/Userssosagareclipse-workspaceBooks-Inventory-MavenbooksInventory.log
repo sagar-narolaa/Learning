@@ -2477,3 +2477,334 @@ INFO    2021-02-12 17:11:51,671 [main] org.hibernate.dialect.Dialect  - HHH00040
 INFO    2021-02-12 17:11:51,845 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 INFO    2021-02-12 17:11:52,109 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
 INFO    2021-02-12 17:11:52,241 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:43:10,604 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 10:43:10,744 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 10:43:11,020 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 10:43:11,412 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 10:43:11,423 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:43:11,423 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 10:43:11,424 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 10:43:11,429 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 10:43:12,052 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 10:43:13,471 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 10:43:13,562 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 10:43:13,595 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 10:43:13,596 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:43:13,596 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 10:43:13,596 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 10:43:13,596 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 10:43:13,645 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 10:43:13,829 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 10:43:14,158 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:43:14,340 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:44:06,831 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 10:44:06,939 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 10:44:07,227 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 10:44:07,610 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 10:44:07,621 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:44:07,621 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 10:44:07,621 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 10:44:07,626 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 10:44:08,199 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 10:44:09,581 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 10:44:09,674 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 10:44:09,710 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 10:44:09,710 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:44:09,711 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 10:44:09,711 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 10:44:09,711 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 10:44:09,756 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 10:44:09,923 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 10:44:10,172 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:44:10,285 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:44:47,261 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 10:44:47,364 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 10:44:47,639 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 10:44:48,018 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 10:44:48,029 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:44:48,029 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 10:44:48,029 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 10:44:48,034 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 10:44:48,602 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 10:44:49,885 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 10:44:49,976 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 10:44:50,024 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 10:44:50,024 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:44:50,025 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 10:44:50,025 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 10:44:50,025 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 10:44:50,082 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 10:44:50,267 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 10:44:50,613 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:44:50,703 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:46:12,742 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 10:46:12,834 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 10:46:13,230 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 10:46:13,953 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 10:46:13,970 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:46:13,970 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 10:46:13,971 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 10:46:13,978 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 10:46:14,740 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 10:46:16,119 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 10:46:16,219 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 10:46:16,257 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 10:46:16,258 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:46:16,258 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 10:46:16,259 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 10:46:16,259 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 10:46:16,301 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 10:46:16,454 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 10:46:16,697 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 10:46:16,836 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:13:55,315 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 11:13:55,414 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 11:13:55,693 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 11:13:56,249 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:13:56,263 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:13:56,264 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:13:56,264 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:13:56,271 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:13:56,860 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:13:58,284 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:13:58,384 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 11:13:58,420 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:13:58,420 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:13:58,421 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:13:58,421 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:13:58,421 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:13:58,482 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:13:58,633 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:15:04,423 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 11:15:04,538 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 11:15:04,911 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 11:15:05,503 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:15:05,515 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:15:05,515 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:15:05,515 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:15:05,520 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:15:06,118 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:15:07,583 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:15:07,682 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 11:15:07,713 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:15:07,714 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:15:07,714 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:15:07,714 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:15:07,715 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:15:07,762 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:15:07,929 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:15:52,461 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 11:15:52,566 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 11:15:52,820 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 11:15:53,285 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:15:53,299 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:15:53,300 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:15:53,301 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:15:53,305 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:15:53,881 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:15:55,153 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:15:55,251 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 11:15:55,285 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:15:55,286 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:15:55,287 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:15:55,287 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:15:55,287 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:15:55,330 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:15:55,499 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:18:10,193 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 11:18:10,294 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 11:18:10,565 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 11:18:11,031 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:18:11,047 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:18:11,048 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:18:11,048 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:18:11,054 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:18:11,655 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:18:12,930 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:18:13,031 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 11:18:13,065 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:18:13,066 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:18:13,066 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:18:13,067 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:18:13,067 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:18:13,109 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:18:13,261 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:18:13,479 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:18:42,591 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 11:18:42,690 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 11:18:42,958 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 11:18:43,467 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:18:43,481 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:18:43,482 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:18:43,482 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:18:43,487 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:18:44,146 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:18:45,486 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:18:45,589 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 11:18:45,629 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:18:45,629 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:18:45,629 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:18:45,630 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:18:45,630 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:18:45,678 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:18:45,826 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:18:46,047 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:18:46,175 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:19:48,323 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 11:19:48,517 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 11:19:48,873 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 11:19:49,553 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:19:49,565 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:19:49,566 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:19:49,566 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:19:49,571 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:19:50,224 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:19:51,768 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:19:51,872 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 11:19:51,905 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:19:51,906 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:19:51,906 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:19:51,906 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:19:51,907 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:19:51,969 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:19:52,127 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:19:52,359 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:20:56,264 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 11:20:56,359 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 11:20:56,616 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 11:20:57,096 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:20:57,113 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:20:57,114 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:20:57,115 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:20:57,124 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:20:57,720 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:20:59,026 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:20:59,137 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 11:20:59,170 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:20:59,171 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:20:59,171 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:20:59,171 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:20:59,171 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:20:59,218 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:20:59,378 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:20:59,676 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:20:59,830 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:46:20,962 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 11:46:21,111 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 11:46:21,400 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 11:46:21,890 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:46:21,905 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:46:21,906 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:46:21,906 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:46:21,911 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:46:22,511 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:46:23,912 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:46:24,043 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 11:46:24,098 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 11:46:24,099 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 11:46:24,099 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 11:46:24,100 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 11:46:24,100 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 11:46:24,209 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 11:46:24,454 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 11:46:24,797 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:13:58,127 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 12:13:58,232 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 12:13:58,481 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 12:13:58,919 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 12:13:58,931 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:13:58,932 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 12:13:58,932 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 12:13:58,937 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 12:13:59,591 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 12:14:01,035 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 12:14:01,135 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 12:14:01,173 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 12:14:01,173 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:14:01,174 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 12:14:01,174 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 12:14:01,174 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 12:14:01,226 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 12:14:01,390 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 12:14:01,615 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:14:01,750 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:14:54,829 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 12:14:54,928 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 12:14:55,188 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 12:14:55,648 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 12:14:55,666 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:14:55,667 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 12:14:55,667 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 12:14:55,674 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 12:14:56,277 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 12:14:57,653 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 12:14:57,757 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 12:14:57,794 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 12:14:57,794 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:14:57,795 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 12:14:57,795 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 12:14:57,795 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 12:14:57,839 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 12:14:57,999 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 12:14:58,227 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:14:58,373 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:16:13,289 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 12:16:13,403 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 12:16:13,674 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 12:16:14,140 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 12:16:14,166 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:16:14,167 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 12:16:14,167 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 12:16:14,175 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 12:16:14,796 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 12:16:16,273 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 12:16:16,430 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 12:16:16,469 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 12:16:16,469 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:16:16,469 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 12:16:16,470 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 12:16:16,470 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 12:16:16,519 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 12:16:16,689 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 12:16:16,971 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:16:17,112 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:16:41,929 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 12:16:42,035 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 12:16:42,306 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 12:16:42,769 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 12:16:42,784 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:16:42,784 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 12:16:42,785 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 12:16:42,790 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 12:16:43,454 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 12:16:44,820 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 12:16:44,924 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 12:16:44,959 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 12:16:44,960 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:16:44,960 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 12:16:44,960 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 12:16:44,960 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 12:16:45,014 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 12:16:45,186 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 12:16:45,416 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:16:45,616 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:18:51,046 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+INFO    2021-02-13 12:18:51,147 [main] org.hibernate.Version  - HHH000412: Hibernate ORM core version 5.4.27.Final
+INFO    2021-02-13 12:18:51,470 [main] org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+WARN    2021-02-13 12:18:51,917 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 12:18:51,929 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:18:51,929 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 12:18:51,930 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 12:18:51,935 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 12:18:52,597 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 12:18:53,999 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 12:18:54,110 [main] org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [name: Book_Details]
+WARN    2021-02-13 12:18:54,147 [main] org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO    2021-02-13 12:18:54,148 [main] org.hibernate.orm.connections.pooling  - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:18:54,148 [main] org.hibernate.orm.connections.pooling  - HHH10001001: Connection properties: {password=****, user=root}
+INFO    2021-02-13 12:18:54,148 [main] org.hibernate.orm.connections.pooling  - HHH10001003: Autocommit mode: false
+INFO    2021-02-13 12:18:54,149 [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO    2021-02-13 12:18:54,226 [main] org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO    2021-02-13 12:18:54,431 [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO    2021-02-13 12:18:54,775 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]
+INFO    2021-02-13 12:18:55,000 [main] org.hibernate.orm.connections.pooling  - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/books_inventory]

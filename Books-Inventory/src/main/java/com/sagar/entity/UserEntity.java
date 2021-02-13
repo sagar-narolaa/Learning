@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -35,8 +36,18 @@ public class UserEntity {
 	@Column(name = "PASSWORD")
 	private String pwd;
 
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "userId", nullable = false)
 	private List<Address> addrList = new ArrayList<Address>();
+	
+	public UserEntity(String fname, String lname, String email, String pwd, List<Address> addrList) {
+		super();
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
+		this.pwd = pwd;
+		this.addrList = addrList;
+	}
 
 	public int getId() {
 		return userId;
@@ -44,6 +55,10 @@ public class UserEntity {
 
 	public void setId(int userId) {
 		this.userId = userId;
+	}
+
+	public UserEntity() {
+		super();
 	}
 
 	public String getFname() {

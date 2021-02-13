@@ -1,4 +1,4 @@
-package com.sagar.main;
+package com.sagar.EntityDaoDemo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

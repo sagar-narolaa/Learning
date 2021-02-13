@@ -39,18 +39,20 @@ public class Address {
 	@Column(name = "addressType")
 	private String addrType;
 
-	@ManyToOne
-	@JoinColumn(name = "userId", nullable = false)
-	private UserEntity user;
+	/*
+	 * @ManyToOne
+	 * 
+	 * @JoinColumn(name = "userId", nullable = false) private UserEntity user;
+	 */
 
-	@OneToOne /* (cascade = CascadeType.ALL) */
+	@OneToOne 
 	@JoinColumn(name = "cityId", nullable = false)
 	private City city;
 
-	@OneToOne /* (cascade = CascadeType.ALL) */
+	@OneToOne 
 	private State state;
 
-	@OneToOne /* (cascade = CascadeType.ALL) */
+	@OneToOne 
 	private Country country;
 
 	public State getState() {
@@ -134,12 +136,10 @@ public class Address {
 		this.addrType = addrType;
 	}
 
-	public UserEntity getUser() {
-		return user;
-	}
-
-	public void setUser(UserEntity user) {
-		this.user = user;
-	}
+	/*
+	 * public UserEntity getUser() { return user; }
+	 * 
+	 * public void setUser(UserEntity user) { this.user = user; }
+	 */
 
 }

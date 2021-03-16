@@ -4,15 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductSearchResponseWrapper {
-	/*
-	 * private int count;
-	 * 
-	 * public int getCount() { return count; }
-	 * 
-	 * public void setCount() {
-	 * 
-	 * this.count = products.size(); }
-	 */
 
 	private List<ProductSearchResponse> products = new ArrayList<>();
 

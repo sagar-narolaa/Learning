@@ -4,7 +4,7 @@ public class ProductSearchRequest {
 	
     private int catagoryId=0;
     private String search="";
-    private String sortBy="id";
+    private String sortBy="";
     private String sortOrder="ASC";
     private int recordsPerPage=10;
     private int pageIndex=1;

@@ -37,9 +37,9 @@ public class ProductDaoCriteria {
 
 		cq.select(product);
 
-		if (catagoryId == 0) {
+		if (catagoryId == 0 && StringUtils.check(searchString, sortBy)) {
 
-			cq.orderBy(cb.asc(product.get(sortBy)));
+			cq.orderBy(cb.asc(product.get(DEFAULT_SORT_BY)));
 
 		} else if (StringUtils.check(searchString, sortBy)) {
 

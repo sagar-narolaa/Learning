@@ -2,10 +2,10 @@ package com.sagar.model;
 
 public class ProductSearchRequest {
 	
-    private int userId;
-    private String bookSearch;
+    private int catagoryId=0;
+    private String search="";
     private String sortBy="id";
-    private String sortOrder="asc";
+    private String sortOrder="ASC";
     private int recordsPerPage=10;
     private int pageIndex=1;
     
@@ -15,17 +15,18 @@ public class ProductSearchRequest {
 	public void setPageIndex(int pageIndex) {
 		this.pageIndex = pageIndex;
 	}
-	public int getUserId() {
-		return userId;
+	
+	public int getCatagoryId() {
+		return catagoryId;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setCatagoryId(int catagoryId) {
+		this.catagoryId = catagoryId;
 	}
-	public String getBookSearch() {
-		return bookSearch;
+	public String getSearch() {
+		return search;
 	}
-	public void setBookSearch(String bookSearch) {
-		this.bookSearch = bookSearch;
+	public void setSearch(String search) {
+		this.search = search;
 	}
 	public String getSortBy() {
 		return sortBy;

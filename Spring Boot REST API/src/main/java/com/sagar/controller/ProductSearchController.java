@@ -12,20 +12,22 @@ import com.sagar.model.ProductSearchResponseWrapper;
 import com.sagar.serviceimpl.ProductSearchService;
 
 @RestController
-@RequestMapping("/catagories")
+@RequestMapping("/products")
 public class ProductSearchController {
-	
+
 	@Autowired
 	private ProductSearchService service;
-	
-	@PostMapping("/_searchBook")
+
+	@PostMapping("/_searchProduct")
 	public ProductSearchResponseWrapper search(@RequestBody(required = false) ProductSearchRequest requestJSON) {
-		if(requestJSON!=null) {			
+
+		if (requestJSON == null) {
+			return service.getResponse(new ProductSearchRequest());
+		} else {
 			return service.getResponse(requestJSON);
 		}
-		
-		return service.getResponseIfJSONBlank();
-		
+
+	
 	}
 
 }

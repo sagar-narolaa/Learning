@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sagar</groupId>
-	<artifactId>Books-Inventory</artifactId>
+	<artifactId>Category-Products</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>SpringBoot-Books-Inventory</name>

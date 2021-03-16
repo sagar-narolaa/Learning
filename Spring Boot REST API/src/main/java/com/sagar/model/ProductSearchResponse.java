@@ -3,11 +3,10 @@ package com.sagar.model;
 public class ProductSearchResponse {
 
 	private int id;
-	private String bookName;
-	private String isbn;
-	private String author;
+	private String productName;
+	private String productDescription;
 	private String catagoryName;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -16,28 +15,20 @@ public class ProductSearchResponse {
 		this.id = id;
 	}
 
-	public String getBookName() {
-		return bookName;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setBookName(String bookName) {
-		this.bookName = bookName;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public String getIsbn() {
-		return isbn;
+	public String getProductDescription() {
+		return productDescription;
 	}
 
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
-	public String getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
 	}
 
 	public String getCatagoryName() {
@@ -47,6 +38,5 @@ public class ProductSearchResponse {
 	public void setCatagoryName(String catagoryName) {
 		this.catagoryName = catagoryName;
 	}
-
 
 }

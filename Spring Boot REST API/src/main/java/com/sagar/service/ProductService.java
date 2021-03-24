@@ -8,11 +8,11 @@ import com.sagar.model.ProductSearchResponseWrapper;
 import com.sagar.entity.Catagory;
 
 public interface ProductService {
-    ProductSearchResponseWrapper getAllproducts();
+    List<ProductSearchResponse> getAllproducts();
 
-    void saveproduct(Product product);
+    Product saveproduct(Product product);
 
-    void updateproduct(Product product);
+    Product updateproduct(Product product);
 
     boolean deleteproduct(int id);
 
@@ -21,4 +21,6 @@ public interface ProductService {
 	//List<Product> findByAnytg(String searchKeyword);
 
 	void saveMultiproducts(List<Product> products);
+
+	Product getProduct(int id);
 }

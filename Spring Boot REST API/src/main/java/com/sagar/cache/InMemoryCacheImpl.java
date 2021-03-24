@@ -8,9 +8,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("simpleCache")
 public class InMemoryCacheImpl<K, V> implements SimpleCache<K, V> {
-
 
 	Map<K, V> map = new ConcurrentHashMap<>();
 
@@ -44,7 +43,5 @@ public class InMemoryCacheImpl<K, V> implements SimpleCache<K, V> {
 	public void removeAll() {
 		map.clear();		
 	}
-
-
-
+	
 }

@@ -27,10 +27,6 @@ public class Catagory {
 	private List<Product> products;
 
 
-	public void setBooks(List<Product> products) {
-		this.products = products;
-	}
-
 	public Catagory() {
 	}
 

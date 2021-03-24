@@ -2,17 +2,20 @@ package com.sagar.model;
 
 public class ProductSearchResponse {
 
-	private int id;
+	private int productId;
 	private String productName;
 	private String productDescription;
-	private String catagoryName;
+	private int categoryId;
+	private String categoryName;
 
-	public int getId() {
-		return id;
+
+
+	public int getProductId() {
+		return productId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
 
 	public String getProductName() {
@@ -31,12 +34,38 @@ public class ProductSearchResponse {
 		this.productDescription = productDescription;
 	}
 
-	public String getCatagoryName() {
-		return catagoryName;
+	public int getCategoryId() {
+		return categoryId;
 	}
 
-	public void setCatagoryName(String catagoryName) {
-		this.catagoryName = catagoryName;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+
+
+	public ProductSearchResponse(int productId, String productName, String productDescription, int categoryId,
+			String categoryName) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.productDescription = productDescription;
+		this.categoryId = categoryId;
+		this.categoryName = categoryName;
+	}
+
+	public ProductSearchResponse() {
+		super();
+	}
+
+
 
 }

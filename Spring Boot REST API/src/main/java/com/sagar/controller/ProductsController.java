@@ -3,6 +3,7 @@ package com.sagar.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sagar.entity.Product;
-import com.sagar.model.ProductSearchResponseWrapper;
+import com.sagar.model.ProductSearchResponse;
 import com.sagar.service.ProductService;
 
 @RestController
@@ -21,47 +22,40 @@ import com.sagar.service.ProductService;
 
 public class ProductsController {
 	@Autowired
+	@Qualifier("serviceWithEHcache")
 	private ProductService productService;
 
-	@GetMapping
-	public ProductSearchResponseWrapper getAllProducts() {
+	@GetMapping("/list")
+	public List<ProductSearchResponse> getAllProducts() {
 		return productService.getAllproducts();
 	}
 
+	@GetMapping
+	public Product getProduct(@RequestParam("id") int id) {
+		return productService.getProduct(id);
+	}
+	
+
 	@PostMapping
-	public ProductSearchResponseWrapper saveProduct(@RequestBody Product product) {
-		productService.saveproduct(product);
-		return getAllProducts();
+	public Product saveProduct(@RequestBody Product product) {
+		return productService.saveproduct(product);
+		
 	}
 
 	@PostMapping({ "/saveMulti" })
-	public ProductSearchResponseWrapper saveMultipleProducts(@RequestBody List<Product> products) {
+	public List<ProductSearchResponse> saveMultipleProducts(@RequestBody List<Product> products) {
 		productService.saveMultiproducts(products);
 		return getAllProducts();
 	}
 
 	@PutMapping
-	public ProductSearchResponseWrapper update(@RequestBody Product product) {
-		productService.updateproduct(product);
-		return getAllProducts();
+	public Product update(@RequestBody Product product) {
+		return productService.updateproduct(product);
 	}
 
 	@DeleteMapping
 	public boolean delete(@RequestParam("id") int id) {
 		return productService.deleteproduct(id);
-
 	}
 
-//    @GetMapping({ "/list" })
-//	public List<Product> getAllProducts1(@RequestParam(required = false) Integer pageIndex,@RequestParam(required = false) Integer sizeOfPage,@RequestParam(required = false) String sortingOrder, @RequestParam(required = false) String sortBy) {
-//		if (sortingOrder == null) {
-//			return getAllProducts();
-//		}
-//		return productService.ProductsWithPageAndSort(pageIndex,sizeOfPage, sortingOrder, new String[] { sortBy });
-//	}
-
-//    @GetMapping({ "/find/{searchKeyword}" })
-//	public List<Product> findByAny(@PathVariable String searchKeyword) {
-//		return productService.findByAnytg(searchKeyword);
-//	}
 }

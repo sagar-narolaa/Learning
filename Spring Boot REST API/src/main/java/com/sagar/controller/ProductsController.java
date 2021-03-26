@@ -16,15 +16,23 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sagar.entity.Product;
 import com.sagar.model.ProductSearchResponse;
 import com.sagar.service.ProductService;
+import com.sagar.serviceimpl.AbstractProductService;
 
 @RestController
 @RequestMapping({ "/products" })
 
 public class ProductsController {
-	@Autowired
-	@Qualifier("serviceWithEHcache")
-	private ProductService productService;
 
+	/*
+	 * @Autowired
+	 * 
+	 * @Qualifier("MyServiceAlias") private ProductService productService;
+	 */
+
+	@Autowired
+	@Qualifier("MyServiceAlias")
+	private AbstractProductService productService;
+	
 	@GetMapping("/list")
 	public List<ProductSearchResponse> getAllProducts() {
 		return productService.getAllproducts();
@@ -34,12 +42,11 @@ public class ProductsController {
 	public Product getProduct(@RequestParam("id") int id) {
 		return productService.getProduct(id);
 	}
-	
 
 	@PostMapping
 	public Product saveProduct(@RequestBody Product product) {
 		return productService.saveproduct(product);
-		
+
 	}
 
 	@PostMapping({ "/saveMulti" })

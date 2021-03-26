@@ -1,7 +1,13 @@
 package com.sagar.model;
 
-public class ProductSearchResponse {
+import java.io.Serializable;
 
+public class ProductSearchResponse implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int productId;
 	private String productName;
 	private String productDescription;

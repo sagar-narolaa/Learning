@@ -6,7 +6,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.sagar.cache.SimpleCache;
@@ -29,12 +28,10 @@ public class CatagoryServiceImpl implements CatagoryService {
 	public CatagoryServiceImpl() {
 	}
 	
-	@Override
-	
+	@Override	
 	public List<Catagory> getAllCatagories() {
 		//List<Catagory> catagories = cache.getAll();
 		return  catagoryDao.findAll();
-
 	}
 	
 	@Override

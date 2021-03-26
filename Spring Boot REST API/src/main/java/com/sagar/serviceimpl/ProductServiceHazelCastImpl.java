@@ -1,34 +1,31 @@
+
 package com.sagar.serviceimpl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import com.sagar.Utils.ObjectConverter;
 import com.sagar.entity.Product;
 import com.sagar.model.ProductSearchRequest;
 import com.sagar.model.ProductSearchResponse;
 import com.sagar.model.ProductSearchResponseWrapper;
 import com.sagar.service.AbstractProductService;
 
-@Service("ehcache")
-public class ProductServiceEHcacheImpl extends AbstractProductService {
+@Service("hazelCast")
+public class ProductServiceHazelCastImpl extends AbstractProductService {
 
-
-	public ProductServiceEHcacheImpl() {
+	public ProductServiceHazelCastImpl() {
 	}
-
-
+	
 	public ProductSearchResponseWrapper searchProduct(ProductSearchRequest request) {
 		return super.searchProduct(request);
 	}
 
 	@Override
-	@Cacheable(value = "productsCache", key = "#id")
+	@Cacheable
 	public Product getProduct(int id) {
 		return super.getProduct(id);
 	}
@@ -38,29 +35,25 @@ public class ProductServiceEHcacheImpl extends AbstractProductService {
 		super.saveMultiproducts(products);
 	}
 
-	@Cacheable(value = "productsCache")
+	@Cacheable(value = "hazelcast")
 	public List<ProductSearchResponse> getAllproducts() {
 		return super.getAllproducts();
 	}
 
 	// @CachePut(value = "productsCache", key = "#product.id")
-	@CacheEvict(value = "productsCache", key = "#product.id", allEntries = true)
+
+	@CacheEvict
 	public Product saveproduct(Product product) {
 		return super.saveproduct(product);
 	}
 
-	@CacheEvict(value = "productsCache", key = "#product.id", allEntries = true)
-	// @CachePut(value = "productsCache", key = "#product.id")
+	@CacheEvict(value = "hazelcast", key = "#product.id")
 	public Product updateproduct(Product product) {
-		/*
-		 * Cache cache = cm.getCache("productsCache"); cache.evict(product.getId());
-		 * cache.put(product.getId(), product);
-		 */
 
 		return super.updateproduct(product);
 	}
 
-	@CacheEvict(value = "productsCache", key = "#id", allEntries = true)
+	@CacheEvict
 	public boolean deleteproduct(int id) {
 		try {
 			super.deleteproduct(id);

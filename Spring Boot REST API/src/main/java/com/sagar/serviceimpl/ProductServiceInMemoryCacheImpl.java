@@ -6,10 +6,14 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sagar.Utils.ObjectConverter;
 import com.sagar.cache.SimpleCache;
 import com.sagar.entity.Catagory;
 import com.sagar.entity.Product;
+import com.sagar.model.ProductSearchRequest;
 import com.sagar.model.ProductSearchResponse;
+import com.sagar.model.ProductSearchResponseWrapper;
+import com.sagar.service.AbstractProductService;
 
 @Service("inMemory")
 public class ProductServiceInMemoryCacheImpl extends AbstractProductService {
@@ -19,7 +23,13 @@ public class ProductServiceInMemoryCacheImpl extends AbstractProductService {
 
 	public ProductServiceInMemoryCacheImpl() {
 	}
-
+	
+	
+	@Override
+	public ProductSearchResponseWrapper searchProduct(ProductSearchRequest request) {
+		return super.searchProduct(request);
+	}
+	
 	@Override
 	public Product getProduct(int id) {
 		return cache.get(id).get();
@@ -35,7 +45,7 @@ public class ProductServiceInMemoryCacheImpl extends AbstractProductService {
 	public List<ProductSearchResponse> getAllproducts() {
 		List<Product> products = cache.getAll();
 		if (products.size() == 0) {
-			List<ProductSearchResponse> list =super.getAllproducts();
+			List<ProductSearchResponse> list = super.getAllproducts();
 			list.forEach(product -> {
 
 				Catagory c = new Catagory();
@@ -55,7 +65,7 @@ public class ProductServiceInMemoryCacheImpl extends AbstractProductService {
 		return entitiesToModel(cache.getAll());
 
 	}
-	
+
 	protected List<ProductSearchResponse> entitiesToModel(List<Product> products) {
 		return products.stream().map(product -> {
 			ProductSearchResponse response = new ProductSearchResponse();
@@ -67,7 +77,6 @@ public class ProductServiceInMemoryCacheImpl extends AbstractProductService {
 			return response;
 		}).collect(Collectors.toList());
 	}
-
 
 	public Product saveproduct(Product product) {
 		cache.put(product.getId(), product);

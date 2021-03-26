@@ -1,20 +1,39 @@
-package com.sagar.serviceimpl;
+package com.sagar.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sagar.Utils.ObjectConverter;
 import com.sagar.dao.ProductDao;
+import com.sagar.dao.ProductDaoCriteria;
 import com.sagar.entity.Product;
+import com.sagar.model.ProductSearchRequest;
 import com.sagar.model.ProductSearchResponse;
-import com.sagar.service.ProductService;
+import com.sagar.model.ProductSearchResponseWrapper;
 
 @Service
 public abstract class AbstractProductService implements ProductService {
 
 	@Autowired
 	private ProductDao dao;
+
+	@Autowired
+	ProductDaoCriteria productDao;
+
+	public List<Product> findProductsBySearch(ProductSearchRequest request) {
+
+		List<Product> products = productDao.getproductsWithSearch(request.getSortBy(), request.getSortOrder(),
+				request.getRecordsPerPage(), request.getSearch(), request.getCatagoryId(), request.getPageIndex());
+
+		return products;
+	}
+
+	@Override
+	public ProductSearchResponseWrapper searchProduct(ProductSearchRequest request) {
+		return new ProductSearchResponseWrapper(ObjectConverter.entitiesToModel(findProductsBySearch(request)));
+	}
 
 	@Override
 	public List<ProductSearchResponse> getAllproducts() {

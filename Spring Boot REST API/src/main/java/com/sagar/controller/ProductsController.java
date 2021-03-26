@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sagar.entity.Product;
+import com.sagar.model.ProductSearchRequest;
 import com.sagar.model.ProductSearchResponse;
+import com.sagar.model.ProductSearchResponseWrapper;
+import com.sagar.service.AbstractProductService;
 import com.sagar.service.ProductService;
-import com.sagar.serviceimpl.AbstractProductService;
 
 @RestController
 @RequestMapping({ "/products" })
@@ -32,7 +34,18 @@ public class ProductsController {
 	@Autowired
 	@Qualifier("MyServiceAlias")
 	private AbstractProductService productService;
-	
+
+	@PostMapping("/_searchProduct")
+	public ProductSearchResponseWrapper search(@RequestBody(required = false) ProductSearchRequest requestJSON) {
+
+		if (requestJSON == null) {
+			return productService.searchProduct(new ProductSearchRequest());
+		} else {
+			return productService.searchProduct(requestJSON);
+		}
+
+	}
+
 	@GetMapping("/list")
 	public List<ProductSearchResponse> getAllProducts() {
 		return productService.getAllproducts();

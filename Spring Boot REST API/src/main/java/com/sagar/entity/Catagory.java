@@ -22,7 +22,7 @@ public class Catagory {
 	private String name;
 
 	//@JsonManagedReference
-	@OneToMany(mappedBy = "catagory",fetch =FetchType.LAZY,cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "catagory",cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("catagory")
 	private List<Product> products;
 

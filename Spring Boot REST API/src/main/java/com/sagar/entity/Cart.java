@@ -23,7 +23,7 @@ public class Cart {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne
 	@JsonIgnoreProperties(value =  "cart")
 	@JoinColumn(name = "user_id")		
 	private User user;

@@ -9,13 +9,18 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "users")
-public class User{
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,13 +29,15 @@ public class User{
 	private String username;
 	private String password;
 	private boolean enabled;
-		
-	@OneToMany(fetch = FetchType.EAGER)	
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinColumn(name="role_id")
+	@JsonIgnoreProperties("users")
 	private List<Role> roles;
-	
-	@OneToOne(mappedBy = "user",cascade = CascadeType.ALL)		
+
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private Cart cart;
-	
+
 	public Cart getCart() {
 		return cart;
 	}

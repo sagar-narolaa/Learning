@@ -43,7 +43,6 @@ public class ProductsController {
 		} else {
 			return productService.searchProduct(requestJSON);
 		}
-
 	}
 
 	@GetMapping("/list")
@@ -59,7 +58,6 @@ public class ProductsController {
 	@PostMapping
 	public Product saveProduct(@RequestBody Product product) {
 		return productService.saveproduct(product);
-
 	}
 
 	@PostMapping({ "/saveMulti" })

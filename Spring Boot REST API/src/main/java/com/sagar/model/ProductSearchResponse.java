@@ -15,7 +15,6 @@ public class ProductSearchResponse implements Serializable{
 	private String categoryName;
 
 
-
 	public int getProductId() {
 		return productId;
 	}

@@ -29,10 +29,7 @@ public class MyUserDetails implements UserDetails {
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<Role> roles = user.getRoles();
 		List<SimpleGrantedAuthority> authorities = new ArrayList<>();		
-		System.out.println("=======================================" + user.getUsername());
-		System.out.println("=======================================" + user.getPassword());
 		for (Role role : roles) {
-			System.out.println("=======================================" + role.getName());
 			authorities.add(new SimpleGrantedAuthority(role.getName()));
 		}
 
